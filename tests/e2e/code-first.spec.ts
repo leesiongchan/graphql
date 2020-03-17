@@ -37,7 +37,7 @@ describe('Code-first', () => {
         data: {
           recipes: [
             {
-              id: '1',
+              id: 'iAmRelayId1',
               ingredients: [
                 {
                   name: 'cherry',
@@ -47,7 +47,7 @@ describe('Code-first', () => {
               averageRating: 0.5,
             },
             {
-              id: '2',
+              id: 'iAmRelayId2',
               ingredients: [
                 {
                   name: 'cherry',

@@ -8,7 +8,7 @@ import { METADATA_FACTORY_NAME } from '../../../../lib/plugin/plugin-constants';
   },
 })
 export abstract class IRecipe {
-  @Field(type => ID)
+  // @Field(type => ID)
   id: string;
 
   @Field()
@@ -17,7 +17,7 @@ export abstract class IRecipe {
 
 @ObjectType({ implements: IRecipe, description: 'recipe object type' })
 export class Recipe {
-  @Field(type => ID)
+  // @Field(type => ID)
   id: string;
 
   @Field()
@@ -32,6 +32,11 @@ export class Recipe {
   @Field()
   get averageRating(): number {
     return 0.5;
+  }
+
+  @Field(() => ID, { name: 'id' })
+  get relayId() {
+    return 'iAmRelayId' + this.id;
   }
 
   constructor(recipe: Partial<Recipe>) {
